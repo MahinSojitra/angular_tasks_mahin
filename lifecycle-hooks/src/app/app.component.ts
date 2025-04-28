@@ -7,4 +7,22 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'lifecycle-hooks';
+
+  counter: number = 0;
+
+  constructor() {
+    console.log('Constructor called.');
+  }
+
+  ngOnInit() {
+    console.log('ngOnInit called.');
+  }
+
+  increment() {
+    this.counter++;
+  }
+
+  onCounterClick() {
+    this.increment();
+  }
 }
