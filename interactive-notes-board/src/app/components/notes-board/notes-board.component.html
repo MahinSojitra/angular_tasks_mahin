@@ -1,0 +1,45 @@
+<div class="container py-4">
+  <div class="card shadow-sm">
+    <div class="card-body p-4">
+
+      <h2 class="text-center text-success fw-bold mb-5">
+        <i class="bi bi-stickies-fill me-2"></i> Interactive Notes Board
+      </h2>
+
+      <div class="row justify-content-center mb-5">
+        <div class="col-12 col-md-8">
+          <div class="input-group shadow-sm rounded">
+            <span class="input-group-text bg-white border-end-0">
+              <i class="bi bi-pencil-fill text-success"></i>
+            </span>
+            <input type="text" class="form-control border-start-0 rounded-start-0"
+              placeholder="Add a new awesome note..." [(ngModel)]="noteText" appSetAutofocus />
+            <button class="btn btn-success px-4" (click)="addNote()">
+              <i class="bi bi-plus-lg"></i> Add
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div *appIfNoNotes="notes.length === 0" class="text-center">
+        <span class="text-muted">
+          <i class="bi bi-box-seam me-1"></i> No notes available
+        </span>
+      </div>
+
+      <div *ngIf="notes.length > 0" class="mb-2">
+        <h4 class="text-secondary fw-bold mb-1">
+          <i class="bi bi-journal-text me-1"></i> Your Notes
+        </h4>
+        <p class="text-muted small mb-4">{{ notes.length }} note{{ notes.length > 1 ? 's' : '' }} available</p>
+
+        <div class="row g-3">
+          <div class="col-12 col-sm-6 col-md-4 col-lg-3" *ngFor="let note of notes">
+            <app-note [note]="note" (delete)="deleteNote(note.id)"></app-note>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
