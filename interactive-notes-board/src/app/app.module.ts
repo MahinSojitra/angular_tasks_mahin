@@ -9,6 +9,7 @@ import { FormsModule } from '@angular/forms';
 import { HighlightDirective } from './directives/highlight.directive';
 import { AutofocusDirective } from './directives/autofocus.directive';
 import { IfNoNotesDirective } from './directives/if-no-notes.directive';
+import { AutoColorDirective } from './directives/auto-color.directive';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { IfNoNotesDirective } from './directives/if-no-notes.directive';
     NoteComponent,
     HighlightDirective,
     AutofocusDirective,
-    IfNoNotesDirective
+    IfNoNotesDirective,
+    AutoColorDirective
   ],
   imports: [
     BrowserModule,

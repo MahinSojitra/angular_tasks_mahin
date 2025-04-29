@@ -1,5 +1,4 @@
-<div class="card h-100 rounded-4 position-relative overflow-hidden" [ngStyle]="{ 'background-color': note.color }"
-  appHighlight>
+<div class="card h-100 rounded-4 position-relative overflow-hidden" appHighlight [appAutoColor]="note.text">
   <div class="card-body d-flex flex-column">
     <p class="text-dark fw-semibold fs-5 flex-grow-1">
       {{ note.text }}
